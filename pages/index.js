@@ -63,7 +63,7 @@ export default function Home({
         <Banner
           videoId='7H9AaiBLHCo'
           title='Ragnarøk'
-          subTitle='The war against the Ice Giants beginn'
+          subTitle='The war against the Ice Giants beginns now'
           imgUrl='/static/ragnarok.jpg'
         />
 
