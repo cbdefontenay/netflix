@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { magic } from "../lib/magic-client";
 import "../styles/globals.css";
-
+import { Analytics } from "@vercel/analytics/react";
 import Loading from "../components/loading/loading";
 
 function MyApp({ Component, pageProps }) {
@@ -35,7 +35,14 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeError", handleComplete);
     };
   }, [router]);
-  return isLoading ? <Loading /> : <Component {...pageProps} />;
+  return isLoading ? (
+    <Loading />
+  ) : (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
 }
 
 export default MyApp;
